@@ -1,3 +1,4 @@
 # chocobot
 bot for CHOCOLADNITSA
-![chokobot](https://user-images.githubusercontent.com/113354800/205670011-ad44b699-742b-433a-aeae-71bb37ea1a0e.gif)
+
+![finaly](https://user-images.githubusercontent.com/113354800/205672519-eed1aefa-1f06-4f49-9d5d-c9e8d29eef6c.gif)
