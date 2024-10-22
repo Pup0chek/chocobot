@@ -53,24 +53,12 @@ def delete(message):
 
 
 
-# @bot.message_handler(commands = ['delete'])
-# def remove(message):
-#     connect = sqlite3.connect('uusery.db')
-#     cursor = connect.cursor()
 
-#     people_id = message.chat.id
-#     cursor.execute(f"DELETE FROM choco WHERE id = {people_id}")
-#     connect.commit()
-#     bot.send_message(message.chat.id, "Бронь с этого ID удалили из базы данных!")
 
 
 @bot.message_handler(commands = ['start'])
 def start(message):
-    #connect = sqlite3.connect('uusery.db')
-    #cursor = connect.cursor()
-    #cursor.execute("DELETE FROM chocowith WHERE (time_message > DATEADD(HH, -24, GETDATE())")
-    #connect.commit()
-    #bot.send_message(message.chat.id, "База данных обновлена!")
+
 
     bot.send_message(message.chat.id, "Здравстуйте,  " + message.from_user.first_name + '!' +' 🍰')
     all = types.InlineKeyboardMarkup(row_width=1)
@@ -129,10 +117,7 @@ def aaaa(message):
 @bot.callback_query_handler(func=lambda call:True)
 def callback_query(call):
     req = call.data.split('_')
-    #Обработка кнопки - скрыть
-    # if req[0] == 'unseen':
-    #     bot.delete_message(call.message.chat.id, call.message.message_id)
-    #Обработка кнопок - вперед и назад
+
     if 'pagination' in req[0]:
     #Расспарсим полученный JSON
         json_string = json.loads(req[0])
@@ -246,53 +231,6 @@ def woow(message):
 
 
 
-# timestamp not null default current_timestamp
-# delete from choco where added_at < now()-interval 15 second
 
-
-# import sqlite3
-# db = sqlite3.connect('uusery.db')
-# sql = db.cursor()
-
-# sql.execute("""CREATE TABLE IF NOT EXISTS users(
-#     name TEXT,
-#     phone TEXT,
-#     time TEXT,
-#     count TEXT
-# )""")
-# named = str(info[3])
-# phoned = str(info[2])
-# timed = str(info[0])
-# countd = str(info[1])
-# db.commit()
-# def prove(message):
-
-#     sql = db.cursor()
-
-#     sql.execute(f"INSERT INTO users VALUES (?, ?, ?, ?)", (named, phoned, timed, countd))
-#     db.commit()
-#     bot.send_message(message.chat.id, "Зарегестрировано!")
-#     info.clear()
-
-# @bot.message_handler(commands = ['wow'])
-# def wow(message):
-#     for value in sql.execute("SELECT * FROM users"):
-#         bot.send_message(chat.message.id, value)
-
-
-
-
-
-
-
-
-# # @bot.message_handler()
-# # def af(message):
-# #     if message.text == "Photo":
-# #         photo = open("i (1).jpg", 'rb')
-# #         bot.send_photo(message.chat.id, photo)
-# # @bot.message_handler(content_types=['photo'])
-# # def dds(message):
-# #     bot.send_message(message.chat.id, "Классное фото!")
 
 bot.polling(none_stop = True)
